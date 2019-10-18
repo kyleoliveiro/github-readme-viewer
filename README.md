@@ -3,18 +3,20 @@
 ![Travis (.com)](https://img.shields.io/travis/com/kyleoliveiro/github-readme-viewer?style=for-the-badge) ![David](https://img.shields.io/david/kyleoliveiro/github-readme-viewer?style=for-the-badge) ![David](https://img.shields.io/david/dev/kyleoliveiro/github-readme-viewer?style=for-the-badge)
 
 ## Live demo
-[**https://github-readme-viewer.surge.sh**](https://github-readme-viewer.surge.sh)
+Currently down as I forgot to replace my Github personal access token during development 😅
+<!-- [**https://github-readme-viewer.surge.sh**](https://github-readme-viewer.surge.sh) -->
 
-## Running locally
+## Getting started
 **Requirements**
 - \>= Node 10
 - yarn
 
-To get the project running locally, run the following commands:
+**To get the project running locally:**
 
 1. Clone this repository
 ```bash
 $ git clone git@github.com:kyleoliveiro/github-readme-viewer.git
+$ cd github-readme-viewer
 ```
 
 2. Install project dependencies
