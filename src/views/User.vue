@@ -83,7 +83,7 @@ export default {
         case "404":
           this.isUserValid = false;
           break;
-        case "403":
+        case "401":
           this.$router.push("/rate-limited");
           break;
         default:

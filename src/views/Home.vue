@@ -41,7 +41,7 @@ export default {
         case "404":
           errorMessage = "Github user not found.";
           break;
-        case "403":
+        case "401":
           this.$router.push("/rate-limited");
           break;
         default:

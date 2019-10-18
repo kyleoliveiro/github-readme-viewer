@@ -60,7 +60,7 @@ export default {
         case "404":
           this.isRepoValid = false;
           break;
-        case "403":
+        case "401":
           this.$router.push("/rate-limited");
           break;
         default:
