@@ -4,14 +4,14 @@
       <v-btn icon data-cy="back-btn" v-if="appBar.backUrl" @click="$router.push(appBar.backUrl)">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
-      <v-toolbar-title v-if="appBar.title || appBar.subtitle">
-        <div class="h1 font-weight-bold">{{ appBar.title }}</div>
-        <v-expand-transition>
+      <v-fade-transition>
+        <v-toolbar-title v-if="appBar.title || appBar.subtitle">
+          <div class="h1 font-weight-bold">{{ appBar.title }}</div>
           <div class="caption text-truncate" style="max-width: 640px;" v-if="appBar.subtitle">
             {{ appBar.subtitle }}
           </div>
-        </v-expand-transition>
-      </v-toolbar-title>
+        </v-toolbar-title>
+      </v-fade-transition>
     </v-app-bar>
 
     <v-content>
