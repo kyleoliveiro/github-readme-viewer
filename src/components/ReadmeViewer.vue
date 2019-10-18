@@ -1,47 +1,41 @@
 <template>
-  <v-card
-    :loading="loading"
-    data-cy="readme-viewer"
-  >
+  <v-card :loading="loading" data-cy="readme-viewer">
     <div class="pa-6">
       <template v-if="loading">
         <v-skeleton-loader type="article" />
       </template>
       <template v-else>
-        <article
-          v-html="renderedContents"
-          class="markdown-body"
-        ></article>
+        <article v-html="renderedContents" class="markdown-body"></article>
       </template>
     </div>
   </v-card>
 </template>
 
 <script>
-import dompurify from 'dompurify';
-import marked from 'marked';
+import dompurify from "dompurify";
+import marked from "marked";
 
 export default {
-  name: 'ReadmeViewer',
+  name: "ReadmeViewer",
   props: {
     contents: {
       type: String,
-      required: true,
+      required: true
     },
     loading: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     renderedContents() {
       return dompurify.sanitize(
         marked(this.contents, {
-          gfm: true,
-        }),
+          gfm: true
+        })
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

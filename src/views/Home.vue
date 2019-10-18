@@ -14,37 +14,35 @@
 </template>
 
 <script>
-import AppBarController from '@/mixins/AppBarController';
-import SearchForm from '@/components/SearchForm.vue';
+import AppBarController from "@/mixins/AppBarController";
+import SearchForm from "@/components/SearchForm.vue";
 
 export default {
-  name: 'Home',
-  mixins: [
-    AppBarController,
-  ],
+  name: "Home",
+  mixins: [AppBarController],
   components: {
-    SearchForm,
+    SearchForm
   },
   data: () => ({
-    searchFormErrors: [],
+    searchFormErrors: []
   }),
   mounted() {
     this.setAppBar({
       isVisible: false,
-      title: '',
-      subtitle: '',
-      backUrl: '',
+      title: "",
+      subtitle: "",
+      backUrl: ""
     });
   },
   methods: {
     handleSearchFormError(errorCode) {
       let errorMessage;
       switch (errorCode) {
-        case '404':
-          errorMessage = 'Github user not found.';
+        case "404":
+          errorMessage = "Github user not found.";
           break;
-        case '403':
-          this.$router.push('/rate-limited');
+        case "403":
+          this.$router.push("/rate-limited");
           break;
         default:
           errorMessage = `Error: ${errorCode}.`;
@@ -57,7 +55,7 @@ export default {
     },
     handleSearchFormChange() {
       this.searchFormErrors = [];
-    },
-  },
+    }
+  }
 };
 </script>

@@ -1,37 +1,36 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home,
+    path: "/",
+    name: "home",
+    component: Home
   },
   {
-    path: '/rate-limited',
-    name: 'rate-limited',
-    component: () => import(/* webpackChunkName: "rate-limited" */ '../views/RateLimited.vue'),
+    path: "/rate-limited",
+    name: "rate-limited",
+    component: () => import(/* webpackChunkName: "rate-limited" */ "../views/RateLimited.vue")
   },
   {
-    path: '/view/:user',
-    name: 'user',
-    component: () => import(/* webpackChunkName: "user" */ '../views/User.vue'),
+    path: "/view/:user",
+    name: "user",
+    component: () => import(/* webpackChunkName: "user" */ "../views/User.vue")
   },
   {
-    path: '/view/:user/:repo',
-    name: 'repo',
-    component: () => import(/* webpackChunkName: "repo" */ '../views/Repo.vue'),
-  },
-
+    path: "/view/:user/:repo",
+    name: "repo",
+    component: () => import(/* webpackChunkName: "repo" */ "../views/Repo.vue")
+  }
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

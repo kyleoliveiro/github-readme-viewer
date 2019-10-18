@@ -3,16 +3,15 @@
     <template v-if="isRepoValid !== false">
       <v-row>
         <v-col>
-          <ReadmeViewer
-            :contents="repoReadme"
-            :loading="isLoading"
-          />
+          <ReadmeViewer :contents="repoReadme" :loading="isLoading" />
         </v-col>
       </v-row>
     </template>
     <template v-else>
       <div class="py-12 px-3 text-center" data-cy="invalid-repo-message">
-        <p class="headline grey--text">@{{$route.params.user}}/{{$route.params.repo}} does not exist!</p>
+        <p class="headline grey--text">
+          @{{ $route.params.user }}/{{ $route.params.repo }} does not exist!
+        </p>
         <router-link to="/">Back home</router-link>
       </div>
     </template>
@@ -20,32 +19,30 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-import AppBarController from '@/mixins/AppBarController';
-import ReadmeViewer from '@/components/ReadmeViewer.vue';
+import { mapActions } from "vuex";
+import AppBarController from "@/mixins/AppBarController";
+import ReadmeViewer from "@/components/ReadmeViewer.vue";
 
 export default {
-  name: 'User',
-  mixins: [
-    AppBarController,
-  ],
+  name: "User",
+  mixins: [AppBarController],
   components: {
-    ReadmeViewer,
+    ReadmeViewer
   },
   data: () => ({
     isLoading: true,
     isRepoValid: true,
     repoMeta: null,
-    repoReadme: '',
+    repoReadme: ""
   }),
   async mounted() {
     const { user, repo } = this.$route.params;
 
     this.setAppBar({
       isVisible: true,
-      title: '',
-      subtitle: '',
-      backUrl: `/view/${user}`,
+      title: "",
+      subtitle: "",
+      backUrl: `/view/${user}`
     });
 
     try {
@@ -54,17 +51,17 @@ export default {
 
       this.setAppBar({
         title: `@${this.repoMeta.owner.login} / ${this.repoMeta.name}`,
-        subtitle: this.repoMeta.description,
+        subtitle: this.repoMeta.description
       });
 
       this.isLoading = false;
     } catch (e) {
       switch (e.message) {
-        case '404':
+        case "404":
           this.isRepoValid = false;
           break;
-        case '403':
-          this.$router.push('/rate-limited');
+        case "403":
+          this.$router.push("/rate-limited");
           break;
         default:
           throw new Error(e);
@@ -72,10 +69,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'fetchRepoMeta',
-      'fetchRepoReadme',
-    ]),
-  },
+    ...mapActions(["fetchRepoMeta", "fetchRepoReadme"])
+  }
 };
 </script>

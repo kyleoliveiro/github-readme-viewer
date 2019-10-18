@@ -1,14 +1,10 @@
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
 export default {
   computed: {
-    ...mapState([
-      'appBar',
-    ]),
+    ...mapState(["appBar"])
   },
   methods: {
-    ...mapMutations([
-      'setAppBar',
-    ]),
-  },
+    ...mapMutations(["setAppBar"])
+  }
 };
