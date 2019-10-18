@@ -19,11 +19,7 @@ export default new Vuex.Store({
   },
   actions: {
     async fetchUser(context, user) {
-      const response = await fetch(`https://api.github.com/users/${user}`, {
-        headers: {
-          Authorization: "token c0ee7d81401ad11802e202b66591313f685b6853"
-        }
-      });
+      const response = await fetch(`https://api.github.com/users/${user}`);
 
       if (response.status !== 200) throw new Error(response.status);
 
@@ -31,11 +27,7 @@ export default new Vuex.Store({
       return { ...json };
     },
     async fetchRepos(context, user) {
-      const response = await fetch(`https://api.github.com/users/${user}/repos`, {
-        headers: {
-          Authorization: "token c0ee7d81401ad11802e202b66591313f685b6853"
-        }
-      });
+      const response = await fetch(`https://api.github.com/users/${user}/repos`);
 
       if (response.status !== 200) throw new Error(response.status);
 
@@ -43,11 +35,7 @@ export default new Vuex.Store({
       return [...json];
     },
     async fetchRepoMeta(context, { user, repo }) {
-      const response = await fetch(`https://api.github.com/repos/${user}/${repo}`, {
-        headers: {
-          Authorization: "token c0ee7d81401ad11802e202b66591313f685b6853"
-        }
-      });
+      const response = await fetch(`https://api.github.com/repos/${user}/${repo}`);
 
       if (response.status !== 200) throw new Error(response.status);
 
@@ -55,11 +43,7 @@ export default new Vuex.Store({
       return { ...json };
     },
     async fetchRepoReadme(context, { user, repo }) {
-      const response = await fetch(`https://api.github.com/repos/${user}/${repo}/readme`, {
-        headers: {
-          Authorization: "token c0ee7d81401ad11802e202b66591313f685b6853"
-        }
-      });
+      const response = await fetch(`https://api.github.com/repos/${user}/${repo}/readme`);
 
       if (response.status !== 200) throw new Error(response.status);
 
