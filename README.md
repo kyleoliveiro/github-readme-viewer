@@ -1,6 +1,6 @@
 # Github Readme Viewer
 
-![Travis (.com)](https://img.shields.io/travis/com/kyleoliveiro/github-readme-viewer?style=for-the-badge)
+![Travis (.com)](https://img.shields.io/travis/com/kyleoliveiro/github-readme-viewer?style=for-the-badge) ![David](https://img.shields.io/david/kyleoliveiro/github-readme-viewer?style=for-the-badge) ![David](https://img.shields.io/david/dev/kyleoliveiro/github-readme-viewer?style=for-the-badge)
 
 ## Live demo
 [**https://github-readme-viewer.surge.sh**](https://github-readme-viewer.surge.sh)
