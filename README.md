@@ -2,9 +2,10 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/kyleoliveiro/github-readme-viewer?style=for-the-badge) ![David](https://img.shields.io/david/kyleoliveiro/github-readme-viewer?style=for-the-badge) ![David](https://img.shields.io/david/dev/kyleoliveiro/github-readme-viewer?style=for-the-badge)
 
+> **Note:** This application only makes unauthenticated calls to the Github API, so it is prone to aggressive [rate limiting](https://developer.github.com/v3/#rate-limiting).
+
 ## Live demo
-Currently down as I forgot to replace my Github personal access token during development 😅
-<!-- [**https://github-readme-viewer.surge.sh**](https://github-readme-viewer.surge.sh) -->
+[**https://github-readme-viewer.surge.sh**](https://github-readme-viewer.surge.sh)
 
 ## Getting started
 **Requirements**
